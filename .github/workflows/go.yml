@@ -19,8 +19,17 @@ jobs:
       with:
         go-version: 1.18
 
-    - name: Build
-      run: go build -v ./...
+    - name: Download modules
+      run: go mod download
 
-    - name: Test
-      run: go test -v ./...
+    - name: Build
+      run: go build -o executable main.go
+    
+    - name: Chmod
+      run: chmod +x executable
+    
+    - name: List Files
+      run: ls && pwd
+
+    - name: Run
+      run: ./executable
