@@ -27,9 +27,3 @@ jobs:
     
     - name: Chmod
       run: chmod +x executable
-    
-    - name: List Files
-      run: ls && pwd
-
-    - name: Run
-      run: ./executable
